@@ -93,3 +93,7 @@ This repository is designed to be a learning resource for predictive modeling te
 ## License
 
 This project is available for educational purposes. Feel free to use and learn from it!
+
+## Database Credits
+
+The SQLite databases used in this project are sourced from the [SQLite Databases for Learning Data Science](https://github.com/davidjamesknight/SQLite_databases_for_learning_data_science) repository by David James Knight.
