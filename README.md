@@ -14,15 +14,16 @@ The project includes implementation and analysis of various predictive modeling 
 
 ## Project Structure
 
-- `Intro a Regresion Lineal.ipynb`: Linear Regression concepts and implementation
+- `Intro a Regresion Lineal.ipynb`: Linear Regression concepts and implementation (MPG case)
 - `Intro a Regresion Logistica.ipynb`: Logistic Regression analysis
 - `Intro Modelos de Clasificación.ipynb`: Introduction to classification models
 - `diamonds_case/`: EDA, OLS, KNN and Decision Tree regression on the diamonds dataset
-- `boston_case/`: Variable selection with VIF and p-values
-- `calculations.py`: Plotting helpers
+- `california_case/`: Variable selection with VIF and p-values (California Housing)
 - `pyproject.toml` / `uv.lock`: Project dependencies and the exact pinned versions
 - `.python-version`: Exact Python version used everywhere
 - `.devcontainer/`: GitHub Codespaces / Dev Container configuration
+
+The MPG, diamonds OLS and California notebooks start with a "Funciones auxiliares de visualización" cell: run it once and then just call the plotting functions.
 
 The SQLite databases are downloaded automatically by the notebooks (they are not versioned).
 
