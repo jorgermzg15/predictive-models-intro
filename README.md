@@ -14,11 +14,21 @@ The project includes implementation and analysis of various predictive modeling 
 
 ## Project Structure
 
-- `Intro a Regresion Lineal.ipynb`: Linear Regression concepts and implementation (MPG case)
-- `Intro a Regresion Logistica.ipynb`: Logistic Regression analysis
-- `Intro Modelos de Clasificación.ipynb`: Introduction to classification models
+Mirrors the students repo ([linear_regression_intro_students](https://github.com/jorgermzg15/linear_regression_intro_students)): same file names, but here every notebook is solved.
+
+**Linear regression lab (session 1)**
+- `fundamentos_regresion_lineal.ipynb`: Theory — OLS, coefficients and assumptions
+- `mpg_case/regression_on_mpg.ipynb`: 🎯 3-hour lab — EDA, simple and multiple regression, VIF + p-values and RFECV
+
+**Backup cases**
 - `diamonds_case/`: EDA, OLS, KNN and Decision Tree regression on the diamonds dataset
 - `california_case/`: Variable selection with VIF and p-values (California Housing)
+
+**Classification (upcoming sessions)**
+- `Intro a Regresion Logistica.ipynb`: Logistic Regression analysis
+- `Intro Modelos de Clasificación.ipynb`: Introduction to classification models
+
+**Environment**
 - `pyproject.toml` / `uv.lock`: Project dependencies and the exact pinned versions
 - `.python-version`: Exact Python version used everywhere
 - `.devcontainer/`: GitHub Codespaces / Dev Container configuration
