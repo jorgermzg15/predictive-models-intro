@@ -3,6 +3,10 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "containerEnv": {
+    // El caché de uv y el workspace están en sistemas de archivos distintos
+    "UV_LINK_MODE": "copy"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -16,7 +20,7 @@
       }
     }
   },
-  "postCreateCommand": "bash -lc 'python -m venv .venv && . .venv/bin/activate && python -m pip install --upgrade pip setuptools wheel && pip install -r requirements.txt && python -m ipykernel install --user --name predictive-models --display-name \"Python (Modelos Predictivos)\"'",
-  "forwardPorts": [8888],
+  // Crea .venv con la versión exacta de Python y paquetes de uv.lock
+  "postCreateCommand": "uv sync --frozen",
   "remoteUser": "vscode"
 }

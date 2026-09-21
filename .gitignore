@@ -22,3 +22,6 @@ build/
 # Operating System files
 .DS_Store
 Thumbs.db
+
+# SQLite databases (the notebooks download them on each run)
+*.db

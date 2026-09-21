@@ -1,19 +1,6 @@
-FROM mcr.microsoft.com/devcontainers/python:3.11-bullseye
+# Imagen base ligera (Debian 13 "trixie"). Python NO viene de la imagen:
+# uv instala la versión exacta de .python-version (la misma build que en local).
+FROM mcr.microsoft.com/devcontainers/base:2.2-trixie
 
-# Remove yarn repo with expired GPG key to prevent apt-get update failures
-RUN rm -f /etc/apt/sources.list.d/yarn.list || true
-
-# Install system dependencies needed for scientific Python packages
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-        build-essential \
-        gfortran \
-        libatlas-base-dev \
-        liblapack-dev \
-        libffi-dev \
-        libssl-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /workspace
-
-CMD ["sleep", "infinity"]
+# Misma versión de uv que se usa localmente para generar uv.lock
+COPY --from=ghcr.io/astral-sh/uv:0.12.17 /uv /uvx /usr/local/bin/

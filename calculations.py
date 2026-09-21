@@ -1,18 +1,11 @@
-import plotly.figure_factory as ff
+import plotly.express as px
 
 def plot_correlation(corr_matrix):
-    fig = ff.create_annotated_heatmap(
-        z=corr_matrix.values,
-        x=corr_matrix.columns.tolist(),
-        y=corr_matrix.index.tolist(),
-        colorscale='hot',
-        showscale=True,
-        annotation_text=corr_matrix.values
-    )
-
-    fig.update_layout(
-        title='Matriz de Correlación',
-        yaxis=dict(autorange="reversed")
+    fig = px.imshow(
+        corr_matrix,
+        text_auto=True,
+        color_continuous_scale='hot',
+        title='Matriz de Correlación'
     )
 
     fig.show()
