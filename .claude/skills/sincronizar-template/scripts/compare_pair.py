@@ -3,7 +3,7 @@
     python3 .claude/skills/sincronizar-template/scripts/compare_pair.py <ruta relativa del notebook>
 
 La ruta es relativa a la raíz de cada repo (p. ej. mpg_case/regression_on_mpg.ipynb). El repo de students
-se busca en ../3 Regresión Lineal - Students (o en --students <ruta>).
+se busca en ../3 Modelos Predictivos - Students (o en --students <ruta>).
 
 Alinea las celdas por contenido (difflib) y reporta:
   =   idéntica en ambos
@@ -17,7 +17,7 @@ import json
 import os
 
 REPO_PROF = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", ".."))
-REPO_STU_DEFAULT = os.path.join(os.path.dirname(REPO_PROF), "3 Regresión Lineal - Students")
+REPO_STU_DEFAULT = os.path.join(os.path.dirname(REPO_PROF), "3 Modelos Predictivos - Students")
 
 
 def load(path):

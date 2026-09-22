@@ -1,6 +1,6 @@
 ---
 name: auditar-curso
-description: Audita los repos del curso de Modelos Predictivos (profesor "3 Modelos Predictivos" y alumnos "3 Regresión Lineal - Students") - que el entorno local sea idéntico al de GitHub Codespaces (Python, uv.lock, devcontainer), que las dependencias estén en sus versiones más recientes compatibles, que todos los notebooks corran sin errores, que no haya errores conceptuales ni desalineación entre versión resuelta y template, y que los README estén al día. Úsala antes de una sesión de clase, al actualizar dependencias o Python, cuando algo "no corre" en Codespaces, o cuando el profesor pida revisar, auditar, verificar o poner al día los repos.
+description: Audita los repos del curso de Modelos Predictivos (profesor "3 Modelos Predictivos" y alumnos "3 Modelos Predictivos - Students") - que el entorno local sea idéntico al de GitHub Codespaces (Python, uv.lock, devcontainer), que las dependencias estén en sus versiones más recientes compatibles, que todos los notebooks corran sin errores, que no haya errores conceptuales ni desalineación entre versión resuelta y template, y que los README estén al día. Úsala antes de una sesión de clase, al actualizar dependencias o Python, cuando algo "no corre" en Codespaces, o cuando el profesor pida revisar, auditar, verificar o poner al día los repos.
 ---
 
 # Auditar curso

@@ -1,6 +1,6 @@
 ---
 name: sincronizar-template
-description: Propaga cambios entre la versión resuelta del profesor y el template de alumnos de un notebook del curso (repos "3 Modelos Predictivos" y "3 Regresión Lineal - Students"), sin filtrar soluciones, y mantiene idénticas las funciones auxiliares (helpers) en todos los notebooks. Úsala cuando el profesor modifique un notebook resuelto y quiera reflejarlo en el de alumnos, cuando cambie o agregue un helper de visualización o modelado, cuando pregunte si ambas versiones están alineadas, o cuando pida "pasar", "copiar" o "aplicar" un cambio "al de students/alumnos".
+description: Propaga cambios entre la versión resuelta del profesor y el template de alumnos de un notebook del curso (repos "3 Modelos Predictivos" y "3 Modelos Predictivos - Students"), sin filtrar soluciones, y mantiene idénticas las funciones auxiliares (helpers) en todos los notebooks. Úsala cuando el profesor modifique un notebook resuelto y quiera reflejarlo en el de alumnos, cuando cambie o agregue un helper de visualización o modelado, cuando pregunte si ambas versiones están alineadas, o cuando pida "pasar", "copiar" o "aplicar" un cambio "al de students/alumnos".
 ---
 
 # Sincronizar template

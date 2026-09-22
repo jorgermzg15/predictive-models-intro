@@ -18,7 +18,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO_PROF = os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))
-REPO_STU = os.path.join(os.path.dirname(REPO_PROF), "3 Regresión Lineal - Students")
+REPO_STU = os.path.join(os.path.dirname(REPO_PROF), "3 Modelos Predictivos - Students")
 ASSETS = os.path.join(REPO_PROF, ".claude", "skills", "crear-laboratorio", "assets")
 
 HELPERS = {

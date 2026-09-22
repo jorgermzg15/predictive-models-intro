@@ -14,7 +14,7 @@ The project includes implementation and analysis of various predictive modeling 
 
 ## Project Structure
 
-Mirrors the students repo ([linear_regression_intro_students](https://github.com/jorgermzg15/linear_regression_intro_students)): same file names, but here every notebook is solved.
+Mirrors the students repo ([modelos-predictivos-students](https://github.com/jorgermzg15/modelos-predictivos-students)): same file names, but here every notebook is solved.
 
 **Linear regression lab (session 1)**
 - `fundamentos_regresion_lineal.ipynb`: Theory — OLS, coefficients and assumptions

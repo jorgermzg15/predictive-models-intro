@@ -19,7 +19,7 @@ Referencia compartida por las skills `crear-laboratorio`, `sincronizar-template`
 | Repo | Ruta local | Remoto | Para quién |
 |---|---|---|---|
 | Profesor | `3 Modelos Predictivos/` (este repo) | `jorgermzg15/predictive-models-intro` | Versiones **resueltas** y con salidas guardadas |
-| Students | `../3 Regresión Lineal - Students/` (hermano de este repo) | `jorgermzg15/linear_regression_intro_students` | **Templates** que los alumnos llenan en clase (hands-on lab) |
+| Students | `../3 Modelos Predictivos - Students/` (hermano de este repo) | `jorgermzg15/modelos-predictivos-students` | **Templates** que los alumnos llenan en clase (hands-on lab) |
 
 - Los notebooks compartidos viven en la **misma ruta relativa** en ambos repos (p. ej. `mpg_case/regression_on_mpg.ipynb`). Así el profesor proyecta el mismo archivo que el alumno tiene abierto.
 - En el repo de students sólo existe lo que se trabaja con alumnos. Material exclusivo del profesor (p. ej. `Intro a Regresion Logistica.ipynb`) no se copia.
@@ -41,7 +41,7 @@ Referencia compartida por las skills `crear-laboratorio`, `sincronizar-template`
 - Python exacto en `.python-version` (hoy 3.14.7); dependencias en `pyproject.toml` y versiones exactas en `uv.lock`. Ambos repos resuelven las mismas versiones para los paquetes que comparten.
 - Local y Codespaces se crean con el mismo comando: `uv sync --frozen`. El devcontainer (`.devcontainer/`) usa `mcr.microsoft.com/devcontainers/base:<tag>-trixie` + `uv` copiado de `ghcr.io/astral-sh/uv:<versión>`; `postCreateCommand` = `uv sync --frozen`.
 - `pyproject.toml` fija `python-preference = "only-managed"` para que uv use siempre su propio Python (misma build en Mac y Linux).
-- Kernel en VS Code: el `.venv` del proyecto (aparece como `predictive-models-intro (3.14.7)` en el repo del profesor y `linear-regression-intro-students (3.14.7)` en el de students). No usar kernels de Anaconda.
+- Kernel en VS Code: el `.venv` del proyecto (aparece como `predictive-models-intro (3.14.7)` en el repo del profesor y `modelos-predictivos-students (3.14.7)` en el de students). No usar kernels de Anaconda.
 - Las bases SQLite se descargan en cada ejecución y están en `.gitignore` (`*.db`).
 - Para agregar un paquete: agregarlo a `pyproject.toml` **en ambos repos** si ambos lo usan, `uv lock`, `uv sync --frozen`, y verificar que las versiones compartidas coincidan entre los dos `uv.lock`.
 
