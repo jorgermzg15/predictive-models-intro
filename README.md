@@ -37,6 +37,19 @@ The MPG, diamonds OLS and California notebooks start with a "Funciones auxiliare
 
 The SQLite databases are downloaded automatically by the notebooks (they are not versioned).
 
+## Claude Code skills (instructor)
+
+`.claude/skills/` contains project skills for [Claude Code](https://claude.com/claude-code) that encode how this course is built. Invoke them with `/<name>` or just describe the task:
+
+| Skill | What it does |
+|---|---|
+| `/crear-laboratorio` | Builds a new 3-hour lab as a notebook pair: solved version (here) + student template (students repo), from one definition |
+| `/sincronizar-template` | Propagates changes between the solved notebook and the template without leaking solutions; keeps plotting helpers identical everywhere |
+| `/auditar-curso` | Audits both repos: local ↔ Codespaces parity, latest dependencies, notebooks run, conceptual errors, READMEs |
+| `/revisar-notebook-novatos` | Reviews a notebook from a beginner's perspective and proposes a friendlier structure |
+
+Shared course conventions live in `.claude/skills/crear-laboratorio/references/convenciones.md`; the canonical helper code lives in `.claude/skills/crear-laboratorio/assets/`.
+
 ## Tools and Technologies
 
 - Python 3.14 (exact version in `.python-version`)
