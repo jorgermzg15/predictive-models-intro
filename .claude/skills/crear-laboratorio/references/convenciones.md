@@ -21,13 +21,11 @@ Referencia compartida por las skills `crear-laboratorio`, `sincronizar-template`
 | Profesor | `3 Modelos Predictivos/` (este repo) | `jorgermzg15/predictive-models-intro` | Versiones **resueltas** y con salidas guardadas |
 | Students | `../3 Modelos Predictivos - Students/` (hermano de este repo) | `jorgermzg15/modelos-predictivos-students` | **Templates** que los alumnos llenan en clase (hands-on lab) |
 
-- Los notebooks compartidos viven en la **misma ruta relativa** en ambos repos (p. ej. `mpg_case/regression_on_mpg.ipynb`). Así el profesor proyecta el mismo archivo que el alumno tiene abierto.
+- Los notebooks compartidos viven en la **misma ruta relativa** en ambos repos (p. ej. `01-regresion-lineal/caso_mpg.ipynb`). Así el profesor proyecta el mismo archivo que el alumno tiene abierto.
 - En el repo de students sólo existe lo que se trabaja con alumnos. Material exclusivo del profesor (p. ej. `Intro a Regresion Logistica.ipynb`) no se copia.
-- Estructura actual del repo del profesor:
-  - `fundamentos_regresion_lineal.ipynb`: teoría
-  - `mpg_case/`: laboratorio principal de regresión (sesión 1)
-  - `diamonds_case/`, `california_case/`: casos de respaldo
-  - Clasificación (sesiones siguientes): `Intro a Regresion Logistica.ipynb`, `Intro Modelos de Clasificación.ipynb`
+- **Una carpeta por sesión**, con prefijo numérico: `01-regresion-lineal/`, y las siguientes (`02-`, `03-`, `04-`) conforme se construyan. Dentro de cada una: `fundamentos.ipynb` (teoría), `caso_<dataset>.ipynb` (laboratorio) y `slides/` si aplica.
+- `extra/` guarda casos de respaldo y material que no se usa en clase: `extra/diamonds/`, `extra/california/` y, sólo en el repo del profesor, `extra/clasificacion/`.
+- Nombres de archivo en español y sin mayúsculas ni espacios.
 
 ## 2. Público y formato de las sesiones
 
@@ -47,7 +45,7 @@ Referencia compartida por las skills `crear-laboratorio`, `sincronizar-template`
 
 ## 4. Estructura de un laboratorio
 
-Referencia viva: `mpg_case/regression_on_mpg.ipynb` (laboratorio de 3 h). Úsalo como modelo cuando dudes.
+Referencia viva: `01-regresion-lineal/caso_mpg.ipynb` (laboratorio de 3 h). Úsalo como modelo cuando dudes.
 
 1. **Portada** (markdown):
    - `📖 La historia`: contexto real del dataset que dé sentido a los datos (p. ej. la crisis del petróleo para MPG)

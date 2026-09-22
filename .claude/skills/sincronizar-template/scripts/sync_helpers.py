@@ -6,7 +6,7 @@ Busca celdas de código que empiecen con:
   "# Funciones auxiliares de visualización"  -> crear-laboratorio/assets/helpers_viz.py
   "# Funciones de modelado"                   -> crear-laboratorio/assets/helpers_modelo.py
 y reemplaza su código (conserva salidas y demás celdas). Los helpers específicos de un caso
-(p. ej. "# Funciones del caso" en california_case) no se tocan.
+(p. ej. "# Funciones del caso" del caso California) no se tocan.
 
 Flujo para cambiar un helper: edita el archivo en assets/, corre este script, re-ejecuta las versiones
 del profesor con run_notebooks.py --save.

@@ -7,7 +7,7 @@ description: Crea un laboratorio de clase de data analytics / machine learning c
 
 Genera, desde **una sola definición**, la versión resuelta (repo del profesor) y el template (repo de students) de un laboratorio de 3 horas para alumnos novatos. Así ambas versiones tienen exactamente la misma estructura y el profesor proyecta el mismo archivo que el alumno tiene abierto.
 
-Antes de empezar, lee `references/convenciones.md`: ahí están los repos, el público, la estructura de un laboratorio, las reglas del template y los errores técnicos que no deben repetirse. El laboratorio de referencia es `mpg_case/regression_on_mpg.ipynb`; úsalo como modelo de tono y de estructura (con `scripts/notebook_outline.py <ruta> --full` lo recorres sin cargar las salidas).
+Antes de empezar, lee `references/convenciones.md`: ahí están los repos, el público, la estructura de un laboratorio, las reglas del template y los errores técnicos que no deben repetirse. El laboratorio de referencia es `01-regresion-lineal/caso_mpg.ipynb`; úsalo como modelo de tono y de estructura (con `scripts/notebook_outline.py <ruta> --full` lo recorres sin cargar las salidas).
 
 ## Flujo
 
@@ -16,7 +16,7 @@ Aclara con el profesor, si no es evidente:
 - **Tema y técnica** (p. ej. KNN de clasificación con titanic) y **qué debe aprender el alumno** al final.
 - **Dataset**: preferir el repo SQLite ya usado en el curso (`mpg`, `diamonds`, `titanic`, `tips`, `iris`, …) o `sklearn.datasets`. Si propones otro, explica por qué.
 - **Duración** (por defecto 3 horas con descanso) y si reemplaza o complementa un caso existente.
-- **Ruta**: `<caso>_case/<nombre>.ipynb`, la misma en ambos repos.
+- **Ruta**: `NN-<tema>/caso_<dataset>.ipynb` (misma ruta en ambos repos); material de respaldo en `extra/<dataset>/`.
 
 ### 2. Explorar los datos y fijar los números **antes** de escribir
 La historia depende de resultados reales. Con `uv run python -` (entorno del proyecto) calcula todo lo que el laboratorio va a mostrar: nulos, correlaciones, métricas de cada modelo en test, coeficientes, VIF por paso, resultados de selección de variables. Usa `random_state=42`.
@@ -51,7 +51,7 @@ Ejecuta la especificación para generar ambos notebooks. **No importes** otro ar
 ### 5. Verificar
 Desde la raíz del repo del profesor:
 ```bash
-uv run --with nbclient python .claude/skills/crear-laboratorio/scripts/run_notebooks.py <caso>_case/<nombre>.ipynb --save
+uv run --with nbclient python .claude/skills/crear-laboratorio/scripts/run_notebooks.py NN-<tema>/caso_<dataset>.ipynb --save
 ```
 - La versión del profesor debe correr **sin errores**; se guarda ejecutada.
 - Compara **cada número citado en markdown** contra las salidas guardadas. Si alguno no coincide, corrige la especificación y vuelve a generar.

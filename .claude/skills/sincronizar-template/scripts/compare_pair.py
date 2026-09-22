@@ -2,7 +2,7 @@
 
     python3 .claude/skills/sincronizar-template/scripts/compare_pair.py <ruta relativa del notebook>
 
-La ruta es relativa a la raíz de cada repo (p. ej. mpg_case/regression_on_mpg.ipynb). El repo de students
+La ruta es relativa a la raíz de cada repo (p. ej. 01-regresion-lineal/caso_mpg.ipynb). El repo de students
 se busca en ../3 Modelos Predictivos - Students (o en --students <ruta>).
 
 Alinea las celdas por contenido (difflib) y reporta:

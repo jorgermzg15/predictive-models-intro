@@ -16,17 +16,17 @@ The project includes implementation and analysis of various predictive modeling 
 
 Mirrors the students repo ([modelos-predictivos-students](https://github.com/jorgermzg15/modelos-predictivos-students)): same file names, but here every notebook is solved.
 
-**Linear regression lab (session 1)**
-- `fundamentos_regresion_lineal.ipynb`: Theory — OLS, coefficients and assumptions
-- `mpg_case/regression_on_mpg.ipynb`: 🎯 3-hour lab — EDA, simple and multiple regression, VIF + p-values and RFECV
+**Session 1 — Linear regression**
+- `01-regresion-lineal/fundamentos.ipynb`: Theory — OLS, coefficients and assumptions
+- `01-regresion-lineal/caso_mpg.ipynb`: 🎯 3-hour lab — EDA, simple and multiple regression, VIF + p-values and RFECV
+- `01-regresion-lineal/slides/`: Slides for the session
 
-**Backup cases**
-- `diamonds_case/`: EDA, OLS, KNN and Decision Tree regression on the diamonds dataset
-- `california_case/`: Variable selection with VIF and p-values (California Housing)
+Sessions 2-4 (KNN, decision trees, classification) get their own numbered folder as they are built.
 
-**Classification (upcoming sessions)**
-- `Intro a Regresion Logistica.ipynb`: Logistic Regression analysis
-- `Intro Modelos de Clasificación.ipynb`: Introduction to classification models
+**Extra material** (backup cases and instructor-only notebooks)
+- `extra/diamonds/`: EDA, OLS, KNN and decision tree regression on the diamonds dataset
+- `extra/california/`: Variable selection with VIF and p-values (California Housing)
+- `extra/clasificacion/`: Logistic regression and intro to classification models
 
 **Environment**
 - `pyproject.toml` / `uv.lock`: Project dependencies and the exact pinned versions

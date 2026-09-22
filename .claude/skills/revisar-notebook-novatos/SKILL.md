@@ -7,7 +7,7 @@ description: Revisa un notebook de clase (Jupyter) desde la perspectiva de alumn
 
 Da una opinión honesta y accionable, como lo haría un colega con experiencia docente. El profesor decide; tu trabajo es que vea con claridad qué funciona, qué no, y qué harías tú.
 
-Lee `.claude/skills/crear-laboratorio/references/convenciones.md` (público, formato de sesión, estructura de laboratorio y errores técnicos conocidos). El laboratorio `mpg_case/regression_on_mpg.ipynb` es el ejemplo de referencia de cómo se ve un laboratorio bien estructurado para este curso.
+Lee `.claude/skills/crear-laboratorio/references/convenciones.md` (público, formato de sesión, estructura de laboratorio y errores técnicos conocidos). El laboratorio `01-regresion-lineal/caso_mpg.ipynb` es el ejemplo de referencia de cómo se ve un laboratorio bien estructurado para este curso.
 
 ## 1. Leer el notebook completo
 ```bash
