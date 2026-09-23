@@ -24,13 +24,14 @@ Mirrors the students repo ([modelos-predictivos-students](https://github.com/jor
 **Session 2 — Logistic regression**
 - `02-regresion-logistica/fundamentos.ipynb`: Theory — sigmoid, log-odds and maximum likelihood
 - `02-regresion-logistica/caso_titanic.ipynb`: 🎯 3-hour lab — imputation, odds ratios, confusion matrix, precision/recall, decision threshold and ROC/AUC
+- `02-regresion-logistica/slides/`: Logistic regression infographic
 
 Sessions 3-4 (KNN, decision trees) get their own numbered folder as they are built.
 
 **Extra material** (backup cases and instructor-only notebooks)
 - `extra/diamonds/`: EDA, OLS, KNN and decision tree regression on the diamonds dataset
 - `extra/california/`: Variable selection with VIF and p-values (California Housing)
-- `extra/clasificacion/`: Logistic regression and intro to classification models
+- `extra/clasificacion/`: Earlier logistic regression notebook and the titanic case solved with three models
 
 **Environment**
 - `pyproject.toml` / `uv.lock`: Project dependencies and the exact pinned versions

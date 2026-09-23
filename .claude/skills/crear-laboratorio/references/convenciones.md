@@ -23,7 +23,8 @@ Referencia compartida por las skills `crear-laboratorio`, `sincronizar-template`
 
 - Los notebooks compartidos viven en la **misma ruta relativa** en ambos repos (p. ej. `01-regresion-lineal/caso_mpg.ipynb`). Así el profesor proyecta el mismo archivo que el alumno tiene abierto.
 - En el repo de students sólo existe lo que se trabaja con alumnos. Material exclusivo del profesor (p. ej. `Intro a Regresion Logistica.ipynb`) no se copia.
-- **Una carpeta por sesión**, con prefijo numérico: `01-regresion-lineal/`, y las siguientes (`02-`, `03-`, `04-`) conforme se construyan. Dentro de cada una: `fundamentos.ipynb` (teoría), `caso_<dataset>.ipynb` (laboratorio) y `slides/` si aplica.
+- **Una carpeta por sesión**, con prefijo numérico y nombre del modelo: `01-regresion-lineal/`, `02-regresion-logistica/`, `03-knn/`, `04-arboles/`. Dentro de cada una: `fundamentos.ipynb` (teoría del modelo), uno o dos `caso_<dataset>.ipynb` (laboratorio) y `slides/` si aplica.
+- La carpeta responde **"¿qué abro hoy?"**, por eso es la sesión y no el dataset. Un mismo dataset aparece en varias sesiones (MPG en regresión, KNN y árboles; titanic en logística, KNN y árboles) y eso es deliberado: permite comparar modelos sobre el mismo caso.
 - `extra/` guarda casos de respaldo y material que no se usa en clase: `extra/diamonds/`, `extra/california/` y, sólo en el repo del profesor, `extra/clasificacion/`.
 - Nombres de archivo en español y sin mayúsculas ni espacios.
 
@@ -40,6 +41,7 @@ Referencia compartida por las skills `crear-laboratorio`, `sincronizar-template`
 - Local y Codespaces se crean con el mismo comando: `uv sync --frozen`. El devcontainer (`.devcontainer/`) usa `mcr.microsoft.com/devcontainers/base:<tag>-trixie` + `uv` copiado de `ghcr.io/astral-sh/uv:<versión>`; `postCreateCommand` = `uv sync --frozen`.
 - `pyproject.toml` fija `python-preference = "only-managed"` para que uv use siempre su propio Python (misma build en Mac y Linux).
 - Kernel en VS Code: el `.venv` del proyecto (aparece como `predictive-models-intro (3.14.7)` en el repo del profesor y `modelos-predictivos-students (3.14.7)` en el de students). No usar kernels de Anaconda.
+- Los assets compartidos viven en `.claude/skills/crear-laboratorio/assets/`: helpers de visualización, modelado y clasificación, más los preparadores de datos por caso. `sincronizar-template` los propaga a todos los notebooks.
 - Las bases SQLite se descargan en cada ejecución y están en `.gitignore` (`*.db`).
 - Para agregar un paquete: agregarlo a `pyproject.toml` **en ambos repos** si ambos lo usan, `uv lock`, `uv sync --frozen`, y verificar que las versiones compartidas coincidan entre los dos `uv.lock`.
 
@@ -55,13 +57,17 @@ Referencia viva: `01-regresion-lineal/caso_mpg.ipynb` (laboratorio de 3 h). Úsa
    - `📋 Las variables`: tabla con unidades; la variable objetivo marcada con 🎯
 2. **Parte 0 — Preparación** (dada, "ejecuta una sola vez"):
    - Markdown con la tabla de funciones de visualización + celda de helpers de visualización (`assets/helpers_viz.py`, **idéntica en todos los notebooks**)
-   - Si el caso modela: tabla + celda de helpers de modelado (`assets/helpers_modelo.py`)
+   - Según el caso: helpers de modelado (`assets/helpers_modelo.py`, regresión) o de clasificación (`assets/helpers_clasificacion.py`)
    - Carga de datos **completa** (incluida la consulta SQL): los alumnos no escriben la extracción
-3. **Partes numeradas** (`---` + `# 1️⃣ Título (N min)`). Cada parte sigue el patrón:
+3. **Reutilizar un caso ya trabajado** (sesiones 3 en adelante): cuando el dataset ya se exploró en una sesión previa, **no se repiten el EDA ni el preprocesamiento**. En su lugar:
+   - Markdown `📋 Recap` con los hallazgos y las métricas de la sesión anterior
+   - `lab.datos("mpg")` / `lab.datos("titanic")`: celda dada con `cargar_<caso>()` y `preparar_<caso>()` (assets `datos_mpg.py` y `datos_titanic.py`), que reproducen **exactamente** la misma partición y codificación que el alumno construyó a mano
+   - Así la sesión arranca en ~15 min y las métricas son comparables entre modelos
+4. **Partes numeradas** (`---` + `# 1️⃣ Título (N min)`). Cada parte sigue el patrón:
    - Markdown: **qué haremos y por qué**, en palabras simples
    - Código
    - Markdown `✅ **Qué observar:**` con los hallazgos **con números reales** de la ejecución
-4. **Cierre**: tabla comparativa de modelos (`pd.DataFrame(comparacion)`), gráfica del modelo final, `❓ Respuesta a la pregunta`, `📝 Lo que aprendimos`, `🚀 Retos opcionales`.
+5. **Cierre**: tabla comparativa de modelos (`pd.DataFrame(comparacion)`), gráfica del modelo final, `❓ Respuesta a la pregunta`, `📝 Lo que aprendimos`, `🚀 Retos opcionales`.
 
 Principios de la historia:
 - Construir **tensión**: un resultado que "no cuadra" (signo raro, p-value alto) motiva la siguiente técnica.

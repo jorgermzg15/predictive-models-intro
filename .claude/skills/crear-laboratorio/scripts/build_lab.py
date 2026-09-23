@@ -10,6 +10,7 @@ Uso: escribe un archivo de especificación (p. ej. en tu scratchpad) que importe
     lab.md("# 🚗 Laboratorio: ...")                      # igual en ambas versiones
     lab.helpers_viz()                                     # tabla + celda de helpers de visualización
     lab.helpers_modelo()                                  # tabla + celda de helpers de modelado (opcional)
+    lab.datos("mpg")                                      # carga + preparación ya resuelta (sesiones 3 en adelante)
     lab.code("df.describe()",                             # profesor
              "# Pista: df.describe()\\n" + TODO)          # students
     lab.md("✅ **Qué observar:** ...",
@@ -74,6 +75,31 @@ Hacen en una línea lo que de otra forma repetirías en cada modelo:
 | `calcular_vif(X)` | VIF de cada variable, de mayor a menor |"""
 
 
+# Preparadores de datos: en las sesiones donde el caso YA se trabajó, la preparación va dada
+DATOS = {
+    "mpg": ("datos_mpg.py", """### 📥 Los datos, ya preparados
+
+Este caso lo trabajaste en la sesión de regresión lineal, así que no repetimos la exploración ni el preprocesamiento: la celda siguiente trae las dos funciones que hacen lo mismo que hiciste a mano.
+
+| Función | ¿Qué hace? |
+|---|---|
+| `cargar_mpg()` | Descarga la base SQLite y elimina los nulos de `horsepower` |
+| `preparar_mpg(df)` | Separa X/y, hace el split 80/20 (`random_state=42`) y codifica `origin` con los autos americanos como referencia |
+
+Usa exactamente la **misma partición** de aquella sesión, así que las métricas son comparables."""),
+    "titanic": ("datos_titanic.py", """### 📥 Los datos, ya preparados
+
+Este caso lo trabajaste en la sesión de regresión logística, así que no repetimos la exploración ni el preprocesamiento: la celda siguiente trae las dos funciones que hacen lo mismo que hiciste a mano.
+
+| Función | ¿Qué hace? |
+|---|---|
+| `cargar_titanic()` | Descarga la base SQLite con los 891 pasajeros |
+| `preparar_titanic(df)` | Split estratificado 80/20, imputa `age` y `embarked` con datos de train, crea `viaja_solo` y `es_menor`, y codifica las categóricas |
+
+Usa exactamente la **misma partición** de aquella sesión, así que las métricas son comparables."""),
+}
+
+
 def read_asset(name):
     with open(os.path.join(ASSETS, name), encoding="utf-8") as f:
         return f.read().rstrip("\n")
@@ -118,6 +144,12 @@ class Lab:
     def helpers_clasificacion(self, md=HELPERS_CLASIF_MD):
         self.md(md)
         self.code(read_asset("helpers_clasificacion.py"))
+
+    def datos(self, caso):
+        """Celda dada con las funciones de carga y preparación del caso ('mpg' o 'titanic')."""
+        asset, md = DATOS[caso]
+        self.md(md)
+        self.code(read_asset(asset))
 
     def _notebook(self, student):
         cells = [_cell(kind, student_src if (student and student_src is not None) else prof_src)
