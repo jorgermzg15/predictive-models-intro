@@ -46,6 +46,22 @@ Ejecuta la siguiente celda **una sola vez** al inicio. Después sólo tienes que
 | `plot_residuals(y_real, y_pred)` | Residuales vs predichos |
 | `plot_rfecv(rfecv)` | R² según el número de variables seleccionadas por RFECV |"""
 
+HELPERS_CLASIF_MD = """### 🧰 Funciones de clasificación
+
+Ejecuta la celda una vez; después sólo llamas a la función que necesites:
+
+| Función | ¿Para qué sirve? |
+|---|---|
+| `ajustar_logit(X_train, y_train)` | Ajusta una regresión logística (ya agrega la constante) |
+| `predecir_proba(results, X)` | Probabilidad estimada de la clase positiva |
+| `razon_de_momios(results)` | Coeficientes, razón de momios y p-value en una tabla |
+| `evaluar_clasificador(nombre, y_real, y_pred)` | Exactitud, precisión, recall y F1 |
+| `plot_tasa_por_categoria(df, columna, objetivo)` | Tasa de la clase positiva por categoría |
+| `plot_matriz_confusion(y_real, y_pred, etiquetas)` | Matriz de confusión |
+| `plot_curva_roc(y_real, y_proba)` | Curva ROC y AUC |
+| `plot_metricas_por_umbral(y_real, y_proba)` | Cómo cambian las métricas al mover el umbral |
+| `plot_sigmoide()` | La curva que convierte cualquier número en probabilidad |"""
+
 HELPERS_MODELO_MD = """### 🧰 Funciones de modelado
 
 Hacen en una línea lo que de otra forma repetirías en cada modelo:
@@ -98,6 +114,10 @@ class Lab:
     def helpers_modelo(self, md=HELPERS_MODELO_MD):
         self.md(md)
         self.code(read_asset("helpers_modelo.py"))
+
+    def helpers_clasificacion(self, md=HELPERS_CLASIF_MD):
+        self.md(md)
+        self.code(read_asset("helpers_clasificacion.py"))
 
     def _notebook(self, student):
         cells = [_cell(kind, student_src if (student and student_src is not None) else prof_src)

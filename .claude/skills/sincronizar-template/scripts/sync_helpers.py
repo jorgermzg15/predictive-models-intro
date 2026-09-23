@@ -24,6 +24,7 @@ ASSETS = os.path.join(REPO_PROF, ".claude", "skills", "crear-laboratorio", "asse
 HELPERS = {
     "# Funciones auxiliares de visualización": "helpers_viz.py",
     "# Funciones de modelado": "helpers_modelo.py",
+    "# Funciones de clasificación": "helpers_clasificacion.py",
 }
 
 

@@ -21,7 +21,11 @@ Mirrors the students repo ([modelos-predictivos-students](https://github.com/jor
 - `01-regresion-lineal/caso_mpg.ipynb`: 🎯 3-hour lab — EDA, simple and multiple regression, VIF + p-values and RFECV
 - `01-regresion-lineal/slides/`: Slides for the session
 
-Sessions 2-4 (KNN, decision trees, classification) get their own numbered folder as they are built.
+**Session 2 — Logistic regression**
+- `02-regresion-logistica/fundamentos.ipynb`: Theory — sigmoid, log-odds and maximum likelihood
+- `02-regresion-logistica/caso_titanic.ipynb`: 🎯 3-hour lab — imputation, odds ratios, confusion matrix, precision/recall, decision threshold and ROC/AUC
+
+Sessions 3-4 (KNN, decision trees) get their own numbered folder as they are built.
 
 **Extra material** (backup cases and instructor-only notebooks)
 - `extra/diamonds/`: EDA, OLS, KNN and decision tree regression on the diamonds dataset
@@ -33,7 +37,7 @@ Sessions 2-4 (KNN, decision trees, classification) get their own numbered folder
 - `.python-version`: Exact Python version used everywhere
 - `.devcontainer/`: GitHub Codespaces / Dev Container configuration
 
-The MPG, diamonds OLS and California notebooks start with a "Funciones auxiliares de visualización" cell: run it once and then just call the plotting functions.
+Lab notebooks start with a "Preparación" section of helper functions (plotting, OLS modelling, classification): run those cells once and then just call the functions. The canonical helper code lives in `.claude/skills/crear-laboratorio/assets/`.
 
 The SQLite databases are downloaded automatically by the notebooks (they are not versioned).
 
