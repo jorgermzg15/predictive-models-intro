@@ -61,6 +61,7 @@ Ejecuta la celda una vez; después sólo llamas a la función que necesites:
 | `plot_matriz_confusion(y_real, y_pred, etiquetas)` | Matriz de confusión |
 | `plot_curva_roc(y_real, y_proba)` | Curva ROC y AUC |
 | `plot_metricas_por_umbral(y_real, y_proba)` | Cómo cambian las métricas al mover el umbral |
+| `plot_rfecv_clasificacion(rfecv)` | Desempeño según el número de variables que elige RFECV |
 | `plot_sigmoide()` | La curva que convierte cualquier número en probabilidad |"""
 
 HELPERS_MODELO_MD = """### 🧰 Funciones de modelado

@@ -119,6 +119,28 @@ def plot_metricas_por_umbral(y_true, y_proba):
     fig.show()
 
 
+def plot_rfecv_clasificacion(rfecv, metrica='exactitud'):
+    """Desempeño promedio de validación cruzada según el número de variables que conserva RFECV."""
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=rfecv.cv_results_['n_features'],
+        y=rfecv.cv_results_['mean_test_score'],
+        mode='lines+markers',
+        line=dict(color='steelblue', width=3),
+        marker=dict(size=7),
+        name=f'{metrica} promedio (CV)'
+    ))
+    fig.add_vline(x=rfecv.n_features_, line_dash='dash', line_color='red',
+                  annotation_text=f'elegido: {rfecv.n_features_}')
+    fig.update_layout(
+        title='RFECV — desempeño según número de variables seleccionadas',
+        xaxis_title='Número de variables',
+        yaxis_title=f'{metrica.capitalize()} (validación cruzada)',
+        template='plotly_white', width=900, height=450
+    )
+    fig.show()
+
+
 def plot_sigmoide():
     """La función que convierte cualquier número en una probabilidad entre 0 y 1."""
     z = np.linspace(-8, 8, 200)
