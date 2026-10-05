@@ -25,6 +25,7 @@ HELPERS = {
     "# Funciones auxiliares de visualización": "helpers_viz.py",
     "# Funciones de modelado": "helpers_modelo.py",
     "# Funciones de clasificación": "helpers_clasificacion.py",
+    "# Funciones de machine learning": "helpers_ml.py",
     "# Datos del caso MPG": "datos_mpg.py",
     "# Datos del caso Titanic": "datos_titanic.py",
 }

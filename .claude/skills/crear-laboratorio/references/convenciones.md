@@ -41,7 +41,7 @@ Referencia compartida por las skills `crear-laboratorio`, `sincronizar-template`
 - Local y Codespaces se crean con el mismo comando: `uv sync --frozen`. El devcontainer (`.devcontainer/`) usa `mcr.microsoft.com/devcontainers/base:<tag>-trixie` + `uv` copiado de `ghcr.io/astral-sh/uv:<versión>`; `postCreateCommand` = `uv sync --frozen`.
 - `pyproject.toml` fija `python-preference = "only-managed"` para que uv use siempre su propio Python (misma build en Mac y Linux).
 - Kernel en VS Code: el `.venv` del proyecto (aparece como `predictive-models-intro (3.14.7)` en el repo del profesor y `modelos-predictivos-students (3.14.7)` en el de students). No usar kernels de Anaconda.
-- Los assets compartidos viven en `.claude/skills/crear-laboratorio/assets/`: helpers de visualización, modelado y clasificación, más los preparadores de datos por caso. `sincronizar-template` los propaga a todos los notebooks.
+- Los assets compartidos viven en `.claude/skills/crear-laboratorio/assets/`: helpers de visualización, modelado (OLS), clasificación (logística) y machine learning (modelos de scikit-learn), más los preparadores de datos por caso. `sincronizar-template` los propaga a todos los notebooks.
 - Las bases SQLite se descargan en cada ejecución y están en `.gitignore` (`*.db`).
 - Para agregar un paquete: agregarlo a `pyproject.toml` **en ambos repos** si ambos lo usan, `uv lock`, `uv sync --frozen`, y verificar que las versiones compartidas coincidan entre los dos `uv.lock`.
 

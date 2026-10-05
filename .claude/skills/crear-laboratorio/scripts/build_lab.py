@@ -64,6 +64,19 @@ Ejecuta la celda una vez; después sólo llamas a la función que necesites:
 | `plot_rfecv_clasificacion(rfecv)` | Desempeño según el número de variables que elige RFECV |
 | `plot_sigmoide()` | La curva que convierte cualquier número en probabilidad |"""
 
+HELPERS_ML_MD = """### 🧰 Funciones de machine learning
+
+Para los modelos de scikit-learn (KNN, árboles, …):
+
+| Función | ¿Para qué sirve? |
+|---|---|
+| `escalar(X_train, X_test)` | Estandariza ambos conjuntos ajustando sólo con train |
+| `evaluar_regresion(nombre, y_real, y_pred)` | R², RMSE y MAE |
+| `plot_curva_k(ks, scores, metrica)` | Desempeño de validación cruzada para cada k, y regresa el mejor |
+| `plot_curva_complejidad(valores, train, test, parametro, metrica)` | Entrenamiento vs prueba: así se ve el sobreajuste |
+| `plot_importancias(modelo, columnas)` | Importancia de variables de un árbol |
+| `plot_arbol(modelo, columnas, max_depth)` | Dibuja las reglas del árbol |"""
+
 HELPERS_MODELO_MD = """### 🧰 Funciones de modelado
 
 Hacen en una línea lo que de otra forma repetirías en cada modelo:
@@ -141,6 +154,10 @@ class Lab:
     def helpers_modelo(self, md=HELPERS_MODELO_MD):
         self.md(md)
         self.code(read_asset("helpers_modelo.py"))
+
+    def helpers_ml(self, md=HELPERS_ML_MD):
+        self.md(md)
+        self.code(read_asset("helpers_ml.py"))
 
     def helpers_clasificacion(self, md=HELPERS_CLASIF_MD):
         self.md(md)
