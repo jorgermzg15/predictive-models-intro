@@ -23,7 +23,7 @@ Referencia compartida por las skills `crear-laboratorio`, `sincronizar-template`
 
 - Los notebooks compartidos viven en la **misma ruta relativa** en ambos repos (p. ej. `01-regresion-lineal/caso_mpg.ipynb`). Así el profesor proyecta el mismo archivo que el alumno tiene abierto.
 - En el repo de students sólo existe lo que se trabaja con alumnos. Material exclusivo del profesor (p. ej. `Intro a Regresion Logistica.ipynb`) no se copia.
-- **Una carpeta por sesión**, con prefijo numérico y nombre del modelo: `01-regresion-lineal/`, `02-regresion-logistica/`, `03-knn/`, `04-arboles/`. Dentro de cada una: `fundamentos.ipynb` (teoría del modelo), uno o dos `caso_<dataset>.ipynb` (laboratorio) y `slides/` si aplica.
+- **Una carpeta por sesión**, con prefijo numérico y nombre del modelo: `01-regresion-lineal/`, `02-regresion-logistica/`, `03-arboles/`, `04-knn/` (KNN va al final porque no entra en el examen y se trabaja de forma asincrónica). Dentro de cada una: `fundamentos.ipynb` (teoría del modelo), uno o dos `caso_<dataset>.ipynb` (laboratorio) y `slides/` si aplica.
 - La carpeta responde **"¿qué abro hoy?"**, por eso es la sesión y no el dataset. Un mismo dataset aparece en varias sesiones (MPG en regresión, KNN y árboles; titanic en logística, KNN y árboles) y eso es deliberado: permite comparar modelos sobre el mismo caso.
 - `extra/` guarda casos de respaldo y material que no se usa en clase: `extra/diamonds/`, `extra/california/` y, sólo en el repo del profesor, `extra/clasificacion/`.
 - Nombres de archivo en español y sin mayúsculas ni espacios.

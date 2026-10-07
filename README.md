@@ -26,15 +26,15 @@ Mirrors the students repo ([modelos-predictivos-students](https://github.com/jor
 - `02-regresion-logistica/caso_titanic.ipynb`: 🎯 3-hour lab — imputation, odds ratios, confusion matrix, precision/recall, decision threshold and ROC/AUC
 - `02-regresion-logistica/slides/`: Logistic regression infographic
 
-**Session 3 — KNN**
-- `03-knn/fundamentos.ipynb`: Theory — euclidean distance, why scaling is mandatory, the role of k
-- `03-knn/caso_mpg.ipynb`: KNN regression on MPG (beats linear regression: R² 0.859 vs 0.794)
-- `03-knn/caso_titanic.ipynb`: KNN classification on titanic (loses to logistic regression: 0.760 vs 0.771)
+**Session 3 — Decision trees** (in the exam)
+- `03-arboles/fundamentos.ipynb`: Theory — binary splits, impurity, pruning, feature importance
+- `03-arboles/caso_mpg.ipynb`: Regression tree on MPG (beats linear regression: R² 0.812 vs 0.794)
+- `03-arboles/caso_titanic.ipynb`: Classification tree on titanic (0.765, just under logistic's 0.771)
 
-**Session 4 — Decision trees**
-- `04-arboles/fundamentos.ipynb`: Theory — binary splits, impurity, pruning, feature importance
-- `04-arboles/caso_mpg.ipynb`: Regression tree on MPG, pruning with GridSearchCV, reading the tree
-- `04-arboles/caso_titanic.ipynb`: Classification tree on titanic plus the course wrap-up comparing all models
+**Session 4 — KNN** (asynchronous, not in the exam)
+- `04-knn/fundamentos.ipynb`: Theory — euclidean distance, why scaling is mandatory, the role of k
+- `04-knn/caso_mpg.ipynb`: KNN regression on MPG (best of the three: R² 0.859)
+- `04-knn/caso_titanic.ipynb`: KNN classification on titanic (last of the three: 0.760) plus the course wrap-up
 
 Sessions 3 and 4 reuse the cases from sessions 1 and 2: the data arrives already prepared through
 `cargar_*()` / `preparar_*()`, so there is no EDA or feature engineering to repeat.

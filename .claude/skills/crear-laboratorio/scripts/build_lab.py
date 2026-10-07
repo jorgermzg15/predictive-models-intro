@@ -66,7 +66,7 @@ Ejecuta la celda una vez; después sólo llamas a la función que necesites:
 
 HELPERS_ML_MD = """### 🧰 Funciones de machine learning
 
-Para los modelos de scikit-learn (KNN, árboles, …):
+Para los modelos de scikit-learn:
 
 | Función | ¿Para qué sirve? |
 |---|---|
